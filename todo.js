@@ -3,7 +3,7 @@ import * as commands from './commands.js'
 
 const userInputs = process.argv
 const cmd = userInputs[2]
-
+console.log(cmd)
 switch (cmd) {
   case 'list':
     await commands.list()
