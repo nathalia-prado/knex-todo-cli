@@ -22,3 +22,6 @@ export function addTodo(task) {
   return db('todos').insert(newTodo)
 }
 
+export function updateTodo(todo) {
+  return db('todos').update(todo).where('id', todo.id)
+}
