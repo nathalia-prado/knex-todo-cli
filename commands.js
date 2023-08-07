@@ -13,7 +13,7 @@ export async function list() {
 
 function printTodos(todos) {
   todos.forEach((todo) => {
-    console.info(`${todo.id}: ${todo.task}`)
+    console.info(`${todo.id}: ${todo.task} - ${todo.completed ? 'completed' : 'to do'}`)
   })
 }
 
