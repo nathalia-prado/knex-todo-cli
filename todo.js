@@ -18,7 +18,11 @@ switch (cmd) {
     const updatedTodo = {id: userInputs[3], task: userInputs[4]}
     await commands.update(updatedTodo)
     break
-  }  
+  }   
+  case 'search': 
+    await commands.search(userInputs[3])
+    break  
+   
   default:
     console.log(`I don't understand that command: ${cmd}`)
 }

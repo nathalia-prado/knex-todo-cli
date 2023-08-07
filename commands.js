@@ -1,4 +1,4 @@
-import { getTodos, close, deleteTodo, addTodo, updateTodo } from './db.js'
+import { getTodos, close, deleteTodo, addTodo, updateTodo, searchTodo } from './db.js'
 
 export async function list() {
   try {
@@ -44,6 +44,17 @@ export async function add(task) {
 export async function update(todo) {
   try {
     await updateTodo(todo)
+  } catch (err){
+    logError(err)
+  } finally {
+    close()
+  }
+}
+
+export async function search(task) {
+  try {
+    const searchTask = await searchTodo(task)
+    printTodos(searchTask)
   } catch (err){
     logError(err)
   } finally {

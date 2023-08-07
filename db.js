@@ -25,3 +25,7 @@ export function addTodo(task) {
 export function updateTodo(todo) {
   return db('todos').update(todo).where('id', todo.id)
 }
+
+export function searchTodo(task) {
+  return db('todos').select().where('task', task)
+}
