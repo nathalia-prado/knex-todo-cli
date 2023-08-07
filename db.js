@@ -17,3 +17,8 @@ export function deleteTodo(id) {
   return db('todos').delete().where({id})
 }
 
+export function addTodo(task) {
+  const newTodo = {task: task}
+  return db('todos').insert(newTodo)
+}
+

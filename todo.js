@@ -8,11 +8,12 @@ switch (cmd) {
   case 'list':
     await commands.list()
     break
-
   case 'done':
     await commands.deleteTodoById(userInputs[3])
     break
-    
+  case 'add':
+    await commands.add(userInputs[3])    
+    break
   default:
     console.log(`I don't understand that command: ${cmd}`)
 }
