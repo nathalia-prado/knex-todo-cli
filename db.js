@@ -13,3 +13,7 @@ export function close() {
   db.destroy()
 }
 
+export function deleteTodo(id) {
+  return db('todos').delete().where({id})
+}
+
