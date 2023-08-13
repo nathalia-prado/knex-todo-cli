@@ -1,8 +1,4 @@
-import knexfile from './knexfile.js'
-import knex from 'knex'
-
-
-const db = knex.default(knexfile.development)
+import db from './connections.js'
 
 export function getTodos() {
   return db('todos').select()
@@ -28,4 +24,8 @@ export function updateTodo(todo) {
 
 export function searchTodo(task) {
   return db('todos').select().where('task', task)
+}
+
+export function searchTodoById(id) {
+  return db('todos').select().where('id', id).first()
 }
